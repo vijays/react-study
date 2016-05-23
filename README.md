@@ -1,7 +1,7 @@
 
 ## React Practice
 
-### To run
+#### To run
 
 * You'll need [node](https://nodejs.org/en/) installed in your system.
 ```
@@ -30,4 +30,4 @@ If you want to run with webpack-dev-server simply run this command:
 > $ npm run dev
 ```
 
-Open the web browser to `http://localhost:8080/`
+Open the web browser to `http://localhost:3000/`
