@@ -4,7 +4,6 @@
 #### To run
 
 * You'll need [node](https://nodejs.org/en/) installed in your system.
-```
 
 Then install the dependencies:
 
