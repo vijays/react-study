@@ -1,6 +1,5 @@
-# react-webpack-babel
 
-React Practice
+## React Practice
 
 ### To run
 
