@@ -4,7 +4,7 @@ export default class Intro extends Component {
     render() {
         return (
             <div>
-                Welcome!
+                Welcome {this.props.name}!
             </div>
         );
     }
