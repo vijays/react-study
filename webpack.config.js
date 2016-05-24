@@ -6,7 +6,7 @@ module.exports = {
 	entry: [
 		'webpack-dev-server/client?http://0.0.0.0:3000', // WebpackDevServer host and port
 		'webpack/hot/only-dev-server',
-		'./app.jsx' // Your appʼs entry point
+		'./src/app.jsx' // Your appʼs entry point
 	],
 	devtool: process.env.WEBPACK_DEVTOOL || 'source-map',
 	output: {
