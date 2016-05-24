@@ -7,7 +7,7 @@ module.exports = {
 		'./src/app.jsx' // Your appʼs entry point
 	],
 	output: {
-		path: path.join(__dirname, 'public'),
+		path: path.join(__dirname, 'dist'),
 		filename: 'bundle.js'
 	},
 	resolve: {

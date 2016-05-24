@@ -1,6 +1,8 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {Router, Route, IndexRoute, hashHistory} from 'react-router';
+
 import Intro from './components/Intro';
 
 class App extends React.Component {
@@ -17,11 +19,15 @@ class App extends React.Component {
 	render() {
 		return (
 			<div>
-				Hello World!<p />
 				<Intro name = {this.state.name} changeName={this.changeName.bind(this)}/>
 			</div>
 		);
 	}
 }
 
-ReactDOM.render(<App/>, document.querySelector("#myApp"));
+const app = document.getElementById('app');
+
+ReactDOM.render(
+	<App />, 
+	app
+);

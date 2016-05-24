@@ -10,8 +10,9 @@ module.exports = {
 	],
 	devtool: process.env.WEBPACK_DEVTOOL || 'source-map',
 	output: {
-		path: path.join(__dirname, 'public'),
-		filename: 'bundle.js'
+		path: path.join(__dirname, 'dist'),
+		filename: 'bundle.js',
+		publicPath: '/dist/'
 	},
 	resolve: {
 		extensions: ['', '.js', '.jsx']
@@ -20,7 +21,7 @@ module.exports = {
 		loaders: loaders
 	},
 	devServer: {
-		contentBase: "./public",
+		contentBase: "src",
 			noInfo: true, //  --no-info option
 			hot: true,
 			inline: true
