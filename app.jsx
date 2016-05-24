@@ -3,7 +3,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Intro from './components/Intro';
 
-export class App extends React.Component {
+class App extends React.Component {
 	render() {
 		return (
 			<div>
