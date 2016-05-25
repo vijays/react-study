@@ -3,31 +3,18 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {Router, Route, IndexRoute, hashHistory} from 'react-router';
 
+import Layout from './components/Layout';
 import Intro from './components/Intro';
-
-class App extends React.Component {
-	
-	constructor() {
-		super();
-		this.state = {name: ""};
-	}
-	
-	changeName(name) {
-		this.setState({name});
-	}
-	
-	render() {
-		return (
-			<div>
-				<Intro name = {this.state.name} changeName={this.changeName.bind(this)}/>
-			</div>
-		);
-	}
-}
+import ContactDetails from './components/ContactDetails';
 
 const app = document.getElementById('app');
 
 ReactDOM.render(
-	<App />, 
+	<Router history={hashHistory}>
+		<Route path="/" component={Layout}>
+			<Route path="/intro" component={Intro}></Route>
+			<Route path="/contact-details" component={ContactDetails}></Route>
+		</Route>
+	</Router>, 
 	app
 );

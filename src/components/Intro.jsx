@@ -1,18 +1,24 @@
-import React, {Component} from 'react';
+import React from 'react';
+import {Link} from 'react-router';
 
-export default class Intro extends Component {
-    	
-	handleChange(e) {
-		const name = e.target.value;
-		this.props.changeName(name);
+import IntroName from './IntroName';
+
+export default class Intro extends React.Component {
+	
+	constructor() {
+		super();
+		this.state = {name: ""};
 	}
-
-    render() {
-        return (
-            <div>
-                Welcome {this.props.name}!<br />
-                <input onChange={this.handleChange.bind(this)}/>
-            </div>
-        );
-    }
+	
+	changeName(name) {
+		this.setState({name});
+	}
+	
+	render() {
+		return (
+			<div>
+				<IntroName name={this.state.name} changeName={this.changeName.bind(this)} />
+			</div>
+		);
+	}
 }
