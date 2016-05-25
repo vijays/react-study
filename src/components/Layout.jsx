@@ -7,7 +7,7 @@ export default class Layout extends React.Component {
 		return (
 			<div>
 				{this.props.children}
-				<Link to="intro"><button>Introductions</button></Link>
+				<Link to="todos"><button>Todos</button></Link>
 				<Link to="contact-details"><button>Contact Details</button></Link>
 			</div>
 		);
