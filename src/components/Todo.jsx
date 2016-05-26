@@ -7,16 +7,18 @@ export default class Todo extends React.Component{
     }
     
     render() {
-        const id = this.props.id;
-        const text = this.props.text;
-        const completed = this.props.completed;
-
+        const {
+            id, 
+            text, 
+            completed
+        } = this.props;
+            
         return (
             <div>
                 <br />
                 {id}-
                 {text}-
-                {completed}
+                {completed?"\u2714" : "\u2716"}
             </div>
         )
     }
