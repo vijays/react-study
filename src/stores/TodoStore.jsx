@@ -4,26 +4,14 @@ import TodoDispatcher from '../dispatcher/TodoDispatcher';
 class TodoStore extends EventEmitter {
     constructor() {
         super();
-        this.todos = [
-            {
-                id: 1,
-                text: "Go Shopping",
-                completed: true
-            },
-            {
-                id: 2,
-                text: "Pay Bills",
-                completed: false
-            }
-        ]
+        this.todos = [];
     }
     
     getAllTodos() {
         return this.todos;
     }
     
-    createTodo(text) {
-        const id = Date.now();
+    createTodo(id, text) {
         this.todos.push (
             {
                 id,
@@ -34,13 +22,19 @@ class TodoStore extends EventEmitter {
         this.emit("change");
     }
     
+    deleteTodo(id){
+        this.todos.splice(id-1, 1);
+        this.emit("change");
+    }
+    
     handleActions(action) {
-        switch (action.type) {
-            case "CREATE_TODO": {
-                this.createTodo(action.text);
+        if (action.type=="CREATE_TODO") {
+                this.createTodo(action.id, action.text);
             }
-        }
-   }
+        if (action.type=="DELETE_TODO"){
+                this.deleteTodo(action.id);
+            }
+    }
 }
 
 const todoStore = new TodoStore;
