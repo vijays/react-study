@@ -1,12 +1,12 @@
 import React from 'react';
-import Todo from '../components/Todo.jsx';
-import TodoStore from '../stores/TodoStore.jsx';
+import Todo from '../components/Todo';
+import TodoStore from '../stores/TodoStore';
 
 export default class TodoList extends React.Component{
     constructor() {
         super();
         this.state = {
-            todos: TodoStore.getTodos()
+            todos: TodoStore.getAllTodos()
         }
     }
 
