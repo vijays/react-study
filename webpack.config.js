@@ -3,12 +3,16 @@ var config = {
     output: {
         path: "dist",
         filename: "bundle.js",
-        publicPath: "dist"
+        publicPath: "dist" //in memory path during dev
     },
     devServer: {
-        contentBase: "src",
+        contentBase: "src", //place to find index.html
         inline: true,
         port: 3000
+    },
+    // resolve extension suffix in import statements
+    resolve: {
+        extensions: ['', '.js', '.jsx']
     },
     module: {
         loaders: [
